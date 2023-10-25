@@ -1,0 +1,57 @@
+Functional programming is a programming paradigm that treats computation 
+as the evaluation of mathematical functions and avoids changing state and mutable data.
+بمعني ان كل فانكشن مش مترتبة علي فانكشن تانية 
+مثال ال functional programming ممكن اعمل بيها الة حاسبة 
+لكن مينفعش ابني بيها سيستم مستسفشي 
+لأن ممكن تغيير بسيط في معاد دكتور مثلا يبقي مترتب عليه حاجات تانية كتير اوي 
+مثال لل functional programming
+
+1-Anonymous functions 
+example ::
+$add = function ($a, $b) {
+    return $a + $b;
+};
+$result = $add(3, 4); // 7
+
+2-Higher-order functions
+example :: 
+function applyOperation($operation, $a, $b) {
+    return $operation($a, $b);
+}
+
+$add =function ($a, $b) {
+    return $a + $b;
+};
+
+$result = applyOperation($add, 3, 4); // 7
+
+3-Array functions
+example ::
+$numbers = [1, 2, 3, 4, 5];
+
+// Map: multiply each number by 2
+$mapped = array_map(function ($n) {
+    return $n * 2;
+}, $numbers); // [2, 4, 6, 8, 10]
+
+// Filter: keep only even numbers
+$filtered = array_filter($numbers, function ($n) {
+    return $n % 2 === 0;
+}); // [2, 4]
+
+// Reduce: calculate the sum of all numbers
+$sum = array_reduce($numbers, function ($carry, $n) {
+    return $carry + $n;
+}, 0); // 15
+
+4-Immutability
+example ::
+$originalArray = [1, 2, 3];
+
+// Create a new array by appending an element
+$newArray = [...$originalArray, 4]; // [1, 2, 3, 4]
+
+// Create a new array by removing an element
+$newArray = array_filter($originalArray, function ($n) {
+    return $n !== 2;
+}); // [1, 3]

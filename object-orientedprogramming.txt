@@ -1,0 +1,92 @@
+Object-oriented programming (OOP) 
+is a programming paradigm that organizes code around objects, which are instances of classes. In PHP
+1-classes and objects
+example ::
+class Car {
+    // Variables
+    public $brand;
+    public $color;
+    
+    // Method
+    public function startEngine() {
+        echo "Engine started.";
+    }
+}
+
+// Create objects
+$car1 = new Car();
+$car2 = new Car();
+
+// Access properties
+$car1->brand = "Toyota";
+$car2->brand = "Honda";
+
+// Call methods
+$car1->startEngine();  // Output: Engine started.
+
+2-Encapsulation
+example ::
+class BankAccount {
+    private $balance;
+    
+    public function deposit($amount) {
+        $this->balance += $amount;
+    }
+    
+    public function getBalance() {
+        return $this->balance;
+    }
+}
+
+$account = new BankAccount();
+$account->deposit(100);
+echo $account->getBalance();  // Output: 100
+
+3-Inheritance
+example ::
+
+class Animal {
+    public function eat() {
+        echo "Eating...";
+    }
+}
+
+class Dog extends Animal {
+    public function bark() {
+        echo "Woof woof!";
+    }
+}
+
+$dog = new Dog();
+$dog->eat();  // Output: Eating...
+$dog->bark();  // Output: Woof woof!
+
+4-Polymorphism
+example ::
+class Shape {
+    public function calculateArea() {
+        // Calculation logic
+    }
+}
+
+class Circle extends Shape {
+    public function calculateArea() {
+        // Circle-specific calculation logic
+    }
+}
+
+class Rectangle extends Shape {
+    public function calculateArea() {
+        // Rectangle-specific calculation logic
+    }
+}
+
+// Polymorphic behavior
+$circle = new Circle();
+$rectangle = new Rectangle();
+
+$shapes = [$circle, $rectangle];
+
+foreach ($shapes as $shape) {
+    echo $shape->calculateArea();
+}

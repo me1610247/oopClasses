@@ -1,0 +1,45 @@
+Procedural programming is a programming paradigm where the program is structured around procedures
+Here are some key aspects of procedural programming in PHP
+1-Functions
+example ::
+function greet($name) {
+    echo "Hello, $name!";
+}
+
+greet("John");  // Output: Hello, John!
+
+2-Global Variables
+example ::
+$counter = 0;
+
+function incrementCounter() {
+    global $counter;
+    $counter++;
+}
+
+incrementCounter();
+echo $counter;  // Output: 1
+
+3-Control Structures
+example ::
+$age = 25;
+
+if ($age >= 18) {
+    echo "You are an adult.";
+} else {
+    echo "You are a minor.";
+}
+
+4-Procedural File Structure
+example ::
+// math_functions.php
+function add($a, $b) {
+    return $a + $b;
+}
+
+// main.php
+include 'math_functions.php';
+
+$result = add(3, 4);  // Result: 7
+
+5-Limited Encapsulation
